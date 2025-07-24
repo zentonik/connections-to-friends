@@ -1,4 +1,4 @@
-# Friends to Connections ( for Roblox.com )
+# Connections to Friends ( for Roblox.com )
 
 ## What is this?
 
