@@ -2,7 +2,7 @@
 
 ## What is this?
 
-A simple JavaScript snippet that replaces all mentions of **"Connect"** and **"Connections"** on a Roblox.com with **"Friends"**
+A simple JavaScript extension that replaces all mentions of **"Connect"** and **"Connections"** on a Roblox.com with **"Friends"**
 
 ## How it works
 
