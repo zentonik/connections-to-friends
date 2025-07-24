@@ -1,18 +1,18 @@
 // main
+let debounceTimeout;
+
+const observer = new MutationObserver(() => {
+  clearTimeout(debounceTimeout);
+  debounceTimeout = setTimeout(() => {
+    replaceLabels();
+  }, 50);
+});
+
 const startObserver = () => {
-  const observer = new MutationObserver(() => {
-    observer.disconnect();
-
-    setTimeout(() => {
-      replaceLabels();
-      observer.observe(document.body, { childList: true, subtree: true });
-    }, 0);
-  });
-
+  if (!document.body) return;
   observer.observe(document.body, { childList: true, subtree: true });
 };
 
-// friends
 function replaceLabels() {
   document.querySelectorAll('span.font-header-2.dynamic-ellipsis-item[title="Connect"]').forEach(el => {
     if (el.textContent.trim() === "Connect") {
@@ -28,7 +28,6 @@ function replaceLabels() {
     });
   });
 
-  // add title if not there
   let title = document.querySelector('h1.friends-title');
   if (!title) {
     title = document.createElement('h1');
@@ -37,7 +36,6 @@ function replaceLabels() {
   }
   title.textContent = 'My Friends';
 
-  // mutual friends
   document.querySelectorAll('span.mutual-friends-tooltip-label').forEach(el => {
     const current = el.textContent.trim();
     const updated = current
@@ -47,7 +45,6 @@ function replaceLabels() {
     if (current !== updated) el.textContent = updated;
   });
 
-  // profile
   document.querySelectorAll('span.text-lead, span.profile-header-social-count-label').forEach(el => {
     if (el.textContent.trim() === "Connections") {
       el.textContent = "Friends";
@@ -61,8 +58,7 @@ function replaceLabels() {
       el.textContent = "Add Friend";
     }
   });
-
-  // tooltip
+  //tooltip
   document.querySelectorAll('div.tooltip-inner').forEach(el => {
    if (el.textContent.includes("Connections are established")) {
      el.textContent = el.textContent.replace(
@@ -85,7 +81,5 @@ function replaceLabels() {
     }
   });
 }
-
-// stop
-replaceLabels();
-startObserver();
+  replaceLabels();
+  startObserver();
