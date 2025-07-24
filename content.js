@@ -20,7 +20,6 @@ function replaceLabels() {
     }
   });
 
-  // h2
   document.querySelectorAll('h2').forEach(h2 => {
     h2.childNodes.forEach(node => {
       if (node.nodeType === Node.TEXT_NODE && node.nodeValue.includes("Connections")) {
@@ -62,6 +61,16 @@ function replaceLabels() {
       el.textContent = "Add Friend";
     }
   });
+
+  // tooltip
+  document.querySelectorAll('div.tooltip-inner').forEach(el => {
+   if (el.textContent.includes("Connections are established")) {
+     el.textContent = el.textContent.replace(
+       "Connections are established when two Roblox users mutually agree to add each other.",
+       "Friends are established when two Roblox users mutually agree to add each other."
+     );
+   }
+ });
 
   document.querySelectorAll('span.friends-carousel-display-name').forEach(el => {
     if (el.textContent.trim() === "Connect") {
