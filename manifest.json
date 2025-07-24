@@ -1,9 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Connections to Friends",
-  "version": "1.0",
-  "description": "Replaces 'Connections' with 'Friends' on Roblox.",
-  "permissions": ["scripting"],
+  "version": "1.2",
+  "description": "Replaces 'Connections' with 'Friends' on Roblox. Made by Zenton",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
   "content_scripts": [
     {
       "matches": ["https://www.roblox.com/*"],
