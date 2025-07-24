@@ -11,7 +11,7 @@ A simple JavaScript extension that replaces all mentions of **"Connect"** and **
 * Also injects a custom `<h1>` title at the top saying **"My Friends"** if not already there
 
 ## How to Use
-1. download content.js and manifest.json
+1. download all files from this rep
 2. put them both in the same folder
 3. go on chrome://extensions/ and click "Developer mode" on top right
 4. then click "Load unfolded" on top left and click on the folder
