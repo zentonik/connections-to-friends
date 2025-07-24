@@ -20,10 +20,3 @@ A simple JavaScript extension that replaces all mentions of **"Connect"** and **
 ## Why?
 
 Alot of people who use Roblox have been very angry about the change from "Friends" to "Connections" so i made this for them
-
-## Features
-
-* Replace "Connect" to "Friends"
-* Replace "Connections" to "Friends"
-* Changes in headers, buttons, tooltips, friend requests, profile labels, and more
-* Auto-updates with dynamic content changes using MutationObserver
