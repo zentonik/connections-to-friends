@@ -58,15 +58,16 @@ function replaceLabels() {
       el.textContent = "Add Friend";
     }
   });
-  //tooltip
+
+  // tooltip
   document.querySelectorAll('div.tooltip-inner').forEach(el => {
-   if (el.textContent.includes("Connections are established")) {
-     el.textContent = el.textContent.replace(
-       "Connections are established when two Roblox users mutually agree to add each other.",
-       "Friends are established when two Roblox users mutually agree to add each other."
-     );
-   }
- });
+    if (el.textContent.includes("Connections are established")) {
+      el.textContent = el.textContent.replace(
+        "Connections are established when two Roblox users mutually agree to add each other.",
+        "Friends are established when two Roblox users mutually agree to add each other."
+      );
+    }
+  });
 
   document.querySelectorAll('span.friends-carousel-display-name').forEach(el => {
     if (el.textContent.trim() === "Connect") {
@@ -80,6 +81,62 @@ function replaceLabels() {
       el.textContent = text.replace("Connection request", "Friend request");
     }
   });
+
+  document.querySelectorAll('label[for="social-network-visibility-followers"]').forEach(el => {
+    el.textContent = "Friends, followers & people I follow";
+  });
+
+  document.querySelectorAll('label[for="social-network-visibility-following"]').forEach(el => {
+    el.textContent = "Friends & people I follow";
+  });
+
+  document.querySelectorAll('label[for="social-network-visibility-friends"]').forEach(el => {
+    el.textContent = "Friends";
+  });
+
+  document.querySelectorAll('label[for="party-setting-friends"]').forEach(el => {
+    el.textContent = "Friends";
+  });
+
+  document.querySelectorAll('label[for="group-party-setting-friends"]').forEach(el => {
+    el.textContent = "Friends";
+  });
+
+  document.querySelectorAll('label[for="online-status-followers"]').forEach(el => {
+    el.textContent = "Friends, followers & people I follow";
+  });
+
+  document.querySelectorAll('label[for="online-status-following"]').forEach(el => {
+    el.textContent = "Friends & people I follow";
+  });
+
+  document.querySelectorAll('label[for="online-status-friends"]').forEach(el => {
+    el.textContent = "Friends";
+  });
+
+  document.querySelectorAll('label[for="join-experience-followers"]').forEach(el => {
+    el.textContent = "Friends, followers & people I follow";
+  });
+
+  document.querySelectorAll('label[for="join-experience-following"]').forEach(el => {
+    el.textContent = "Friends & people I follow";
+  });
+
+  document.querySelectorAll('label[for="join-experience-friends"]').forEach(el => {
+    el.textContent = "Friends";
+  });
+
+  document.querySelectorAll('span.web-blox-css-tss-1283320-Button-textContainer').forEach(el => {
+    const text = el.textContent.trim();
+    if (text.includes("Remove Connection")) {
+      el.textContent = text.replace("Remove Connection", "Remove Friend");
+    }
+    if (text.includes("Add Connection")) {
+      el.textContent = text.replace("Add Connection", "Add Friend");
+    }
+  });
+
 }
-  replaceLabels();
-  startObserver();
+
+replaceLabels();
+startObserver();
