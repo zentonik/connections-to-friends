@@ -17,6 +17,7 @@ function replaceLabels() {
   document.querySelectorAll('span.font-header-2.dynamic-ellipsis-item[title="Connect"]').forEach(el => {
     if (el.textContent.trim() === "Connect") {
       el.textContent = "Friends";
+      document.title = "Friends - Roblox";
     }
   });
 
@@ -59,7 +60,6 @@ function replaceLabels() {
     }
   });
 
-  // tooltip
   document.querySelectorAll('div.tooltip-inner').forEach(el => {
     if (el.textContent.includes("Connections are established")) {
       el.textContent = el.textContent.replace(
@@ -136,6 +136,11 @@ function replaceLabels() {
     }
   });
 
+  document.querySelectorAll('input.friends-filter-searchbar-input').forEach(el => {
+    if (el.placeholder === 'Search Connections') {
+      el.placeholder = 'Search Friends';
+    }
+  });
 }
 
 replaceLabels();
